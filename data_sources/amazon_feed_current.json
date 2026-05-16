@@ -1,0 +1,19 @@
+{
+  "source": "amazon_feed",
+  "items": [
+    {
+      "asin": "B012345678",
+      "price": 24.49,
+      "rating": 4.2,
+      "review_count": 156,
+      "title": "Wireless Charger 20W"
+    },
+    {
+      "asin": "B012345679",
+      "price": 24.99,
+      "rating": 4.5,
+      "review_count": 102,
+      "title": "Fast USB C Charger"
+    }
+  ]
+}
