@@ -1,0 +1,27 @@
+{
+  "productQuestion": "如何持续追踪亚马逊竞品策略、产品变化与营销动态？",
+  "marketScope": ["Amazon US", "Home & Kitchen"],
+  "userScope": ["运营经理", "产品经理"],
+  "competitorScope": ["竞品A", "竞品B"],
+  "constraints": ["T+1 数据时效", "可运营落地"],
+  "findings": [
+    {
+      "statement": "竞品A 最近 14 天促销标签出现频次提升。",
+      "confidence": "fact"
+    },
+    {
+      "statement": "竞品B 可能在测试新品冷启动的低价策略。",
+      "confidence": "assumption"
+    }
+  ],
+  "options": [
+    {
+      "name": "告警优先 + 周报复盘",
+      "pros": ["响应速度快", "运营成本可控"],
+      "cons": ["阈值调优需要前期磨合"]
+    }
+  ],
+  "recommendation": "先上线告警优先方案，P1/P2 事件即时推送，周报沉淀策略变化。",
+  "risks": ["外部数据波动可能导致短时噪音"],
+  "nextExperiments": ["对价格波动阈值做两周 A/B 校准"]
+}
