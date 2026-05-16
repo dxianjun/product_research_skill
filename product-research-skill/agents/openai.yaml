@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Product Research
+  short_description: Turn product questions into structured, evidence-based recommendations.
+  default_prompt: Research this product problem and provide findings, tradeoffs, recommendation, risks, and next experiments.
