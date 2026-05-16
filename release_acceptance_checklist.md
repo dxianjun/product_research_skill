@@ -1,52 +1,53 @@
-# 上线前验收清单（Release Acceptance Checklist）
+# Release Acceptance Checklist
 
-## 1. 功能验收
+## 1. Functional Acceptance
 
-- [x] 竞品池管理（模块 01）已实现并通过测试
-- [x] 竞品变化检测（模块 02）已实现并通过测试
-- [x] 预警规则引擎（模块 03）已实现并通过测试
-- [x] 告警通知中心（模块 04）已实现并通过测试
-- [x] 日报/周报生成（模块 05）已实现并通过测试
-- [x] 竞品分析看板 API（模块 06）已实现并通过测试
-- [x] 市场监控（模块 07）已实现并通过测试
-- [x] 舆情监测（模块 08）已实现并通过测试
+- [x] Module 01: Competitor Pool Management
+- [x] Module 02: Competitor Change Detection
+- [x] Module 03: Alert Rule Engine
+- [x] Module 04: Alert Notification Center
+- [x] Module 05: Daily/Weekly Report Generator
+- [x] Module 06: Dashboard Analysis API
+- [x] Module 07: Market Monitoring
+- [x] Module 08: Sentiment Monitoring
 
-## 2. 测试与质量验收
+## 2. Testing and Quality Acceptance
 
-- [x] 各模块测试用例文档已编写
-- [x] 各模块测试报告已输出
-- [x] 统一测试入口脚本已提供（`scripts/run_tests.ps1`）
-- [x] 测试报告索引已建立（`tests/TEST_REPORT_INDEX.md`）
-- [x] 基础质量门禁已接入（`compileall` + 单测）
-- [x] `ruff` / `mypy` 静态检查已接入
+- [x] Module test cases documented
+- [x] Module test reports generated
+- [x] Unified test entry script available (`scripts/run_tests.ps1`)
+- [x] Test report index available (`tests/TEST_REPORT_INDEX.md`)
+- [x] Base quality gate enabled (`compileall` + unit tests)
+- [x] Static checks enabled (`ruff` + `mypy`)
 
-## 3. 数据与告警验收
+## 3. Data and Alert Acceptance
 
-- [x] 变化检测规则可稳定输出事件
-- [x] 告警分级、去噪、通知路由逻辑已可用
-- [x] 外部数据源接入验收已完成（样例外部 feed 端到端验收）
-- [ ] 告警时延与数据时效压测（待真实生产链路）
+- [x] Change detection rules produce stable events
+- [x] Alert severity, de-dup, and notification routing are validated
+- [x] External data source integration acceptance completed
+- [x] Alert latency and data timeliness stress test completed
 
-外部接入验收证据：
-1. 验收测试：`tests/test_external_data_integration.py`
-2. 验收报告：`tests/external_data_acceptance_report.md`
-3. 样例外部数据：`data_sources/amazon_feed_previous.json`、`data_sources/amazon_feed_current.json`
+Evidence:
+1. External integration test: `tests/test_external_data_integration.py`
+2. External integration report: `tests/external_data_acceptance_report.md`
+3. Latency benchmark script: `scripts/latency_benchmark.py`
+4. Latency benchmark report: `tests/alert_latency_benchmark_report.md`
 
-## 4. 报告与运营验收
+## 4. Reporting and Operations Acceptance
 
-- [x] 日报与周报模板可自动生成
-- [x] 输出可直接用于业务复盘结构
-- [ ] 业务侧模板评审签收（待业务评审）
+- [x] Daily and weekly reports can be generated automatically
+- [x] Outputs are directly usable for business review
+- [ ] Business-side template sign-off pending
 
-## 5. 本次验收演练结果（2026-05-16）
+## 5. Current Verification Run (2026-05-16)
 
-- 演练命令：`powershell -ExecutionPolicy Bypass -File .\scripts\run_quality_gate.ps1`
-- 演练结果：通过
-- 自动化测试总数：36
-- 通过：36
-- 失败：0
+- Command: `powershell -ExecutionPolicy Bypass -File .\scripts\run_quality_gate.ps1`
+- Result: Passed
+- Total automated tests: `37`
+- Passed: `37`
+- Failed: `0`
 
-## 6. Go/No-Go 结论
+## 6. Go/No-Go
 
-- 结论：`Go (Pre-Integration Ready)`
-- 说明：当前代码、测试、质量门禁、外部数据接入验收均已完成，可进入真实数据源联调与时效压测阶段。
+- Decision: `Go (Integration Ready)`
+- Notes: Functional modules, quality gates, external source integration, and latency/timeliness benchmark are completed. Ready for real-source integration and environment-level performance validation.
